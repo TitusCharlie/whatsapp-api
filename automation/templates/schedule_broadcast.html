@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Broadcast</title>
+</head>
+<body>
+    <h2>Schedule Broadcast</h2>
+    <form id="broadcast-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Schedule</button>
+    </form>
+    <div id="response"></div>
+
+    <script>
+        document.getElementById('broadcast-form').onsubmit = async function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const response = await fetch("{% url 'schedule_broadcast' %}", {
+                method: 'POST',
+                body: formData,
+            });
+            const result = await response.json();
+            document.getElementById('response').innerText = result.message;
+        };
+    </script>
+</body>
+</html>

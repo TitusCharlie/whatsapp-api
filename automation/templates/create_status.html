@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Status</title>
+</head>
+<body>
+    <h2>Create WhatsApp Status</h2>
+    <form id="status-form">
+        {% csrf_token %}
+        <!-- Add your form fields for status here -->
+        <button type="submit">Create Status</button>
+    </form>
+    <div id="response"></div>
+
+    <script>
+        document.getElementById('status-form').onsubmit = async function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const response = await fetch("{% url 'create_status' %}", {
+                method: 'POST',
+                body: formData,
+            });
+            const result = await response.json();
+            document.getElementById('response').innerText = result.message;
+        };
+    </script>
+</body>
+</html>

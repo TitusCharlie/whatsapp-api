@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Contact</title>
+</head>
+<body>
+    <h2>Create Contact</h2>
+    <form id="contact-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    <div id="response"></div>
+
+    <script>
+        document.getElementById('contact-form').onsubmit = async function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const response = await fetch("{% url 'create_contact' %}", {
+                method: 'POST',
+                body: formData,
+            });
+            const result = await response.json();
+            document.getElementById('response').innerText = result.message;
+        };
+    </script>
+</body>
+</html>
