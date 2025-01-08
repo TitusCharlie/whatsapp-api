@@ -1,0 +1,19 @@
+/* src/components/Analytics.css */
+.analytics {
+    text-align: left;
+    padding: 20px;
+  }
+  
+  .analytics h2 {
+    color: #333;
+  }
+  
+  .analytics ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .analytics ul li {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }  

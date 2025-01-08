@@ -39,6 +39,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render
 from .forms import ContactForm, BroadcastForm
+from .models import Contact, MessageLog
 
 def create_contact(request):
     if request.method == 'POST':
@@ -61,3 +62,21 @@ def schedule_broadcast(request):
     else:
         form = BroadcastForm()
     return render(request, 'schedule_broadcast.html', {'form': form})
+
+def get_analytics(request):
+    total_contacts = Contact.objects.count()
+    total_messages = MessageLog.objects.count()
+    response_rate = 0
+    if total_messages > 0:
+        responses = MessageLog.objects.filter(is_response=True).count()
+        response_rate = (responses / total_messages) * 100
+
+    data = {
+        "total_contacts": total_contacts,
+        "total_messages": total_messages,
+        "response_rate": round(response_rate, 2),
+    }
+    return JsonResponse(data)
+
+def dashboard(request):
+    return render(request, 'index.html')  # Replace with your template file

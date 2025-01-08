@@ -16,9 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from automation.views import dashboard
+from automation import views
 
 urlpatterns = [
+
     path('admin/', admin.site.urls),
+    path('', views.dashboard, name='dashboard'),  # Map root URL to the dashboard view
+    path('create-contact/', views.create_contact, name='create_contact'),
+    path('schedule-broadcast/', views.schedule_broadcast, name='schedule_broadcast'),
+    path('automation/', include('automation.urls')),  # Include app-level URLs
+
     # path('automation/', include('automation.urls')),
-    path('', include('automation.urls')),
+#     path('', include('automation.urls')),
 ]
