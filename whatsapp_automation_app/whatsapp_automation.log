@@ -1,0 +1,24 @@
+2025-06-28 15:02:17,872 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-28 15:02:17,872 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-28 15:02:17,874 - INFO -  * Restarting with stat
+2025-06-28 15:02:18,282 - WARNING -  * Debugger is active!
+2025-06-28 15:02:18,285 - INFO -  * Debugger PIN: 829-260-409
+2025-06-28 15:02:25,826 - INFO - 127.0.0.1 - - [28/Jun/2025 15:02:25] "GET /tasks HTTP/1.1" 200 -
+2025-06-28 15:02:27,866 - INFO - 127.0.0.1 - - [28/Jun/2025 15:02:27] "GET /tasks HTTP/1.1" 200 -
+2025-06-28 15:02:28,531 - INFO - 127.0.0.1 - - [28/Jun/2025 15:02:28] "GET /tasks HTTP/1.1" 200 -
+2025-06-28 15:02:28,850 - INFO - 127.0.0.1 - - [28/Jun/2025 15:02:28] "GET /tasks HTTP/1.1" 200 -
+2025-06-28 15:02:29,120 - INFO - 127.0.0.1 - - [28/Jun/2025 15:02:29] "GET /tasks HTTP/1.1" 200 -
+2025-06-28 15:02:29,370 - INFO - 127.0.0.1 - - [28/Jun/2025 15:02:29] "GET /tasks HTTP/1.1" 200 -
+2025-06-28 15:02:29,570 - INFO - 127.0.0.1 - - [28/Jun/2025 15:02:29] "GET /tasks HTTP/1.1" 200 -
+2025-06-28 15:02:29,749 - INFO - 127.0.0.1 - - [28/Jun/2025 15:02:29] "GET /tasks HTTP/1.1" 200 -
+2025-06-28 15:02:31,364 - INFO - 127.0.0.1 - - [28/Jun/2025 15:02:31] "[32mPOST /start-scheduler HTTP/1.1[0m" 302 -
+2025-06-28 15:02:31,369 - INFO - 127.0.0.1 - - [28/Jun/2025 15:02:31] "GET /tasks HTTP/1.1" 200 -
+2025-06-28 15:02:53,280 - INFO - 127.0.0.1 - - [28/Jun/2025 15:02:53] "[32mPOST /stop-scheduler HTTP/1.1[0m" 302 -
+2025-06-28 15:02:53,284 - INFO - 127.0.0.1 - - [28/Jun/2025 15:02:53] "GET /tasks HTTP/1.1" 200 -
+2025-06-28 15:03:04,257 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-28 15:03:04,257 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-28 15:03:04,261 - INFO -  * Restarting with stat
+2025-06-28 15:03:04,656 - WARNING -  * Debugger is active!
+2025-06-28 15:03:04,658 - INFO -  * Debugger PIN: 829-260-409

@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <h2>Scheduled Tasks</h2>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for msg in messages %}
+        <div class="alert alert-success">{{ msg }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <!-- Scheduler Control Buttons -->
+  <form action="{{ url_for('start_scheduler') }}" method="post" style="display: inline;">
+    <button type="submit" class="btn btn-success" {% if scheduler_running %}disabled{% endif %}>▶ Start Scheduler</button>
+  </form>
+  <form action="{{ url_for('stop_scheduler') }}" method="post" style="display: inline;">
+    <button type="submit" class="btn btn-danger" {% if not scheduler_running %}disabled{% endif %}>⏹ Stop Scheduler</button>
+  </form>
+
+  <!-- Filter Dropdown -->
+  <form method="get" action="{{ url_for('view_tasks') }}" class="mt-3 mb-3">
+    <label>Filter by Status:</label>
+    <select name="status" onchange="this.form.submit()">
+      <option value="">All</option>
+      <option value="pending" {% if status_filter == 'pending' %}selected{% endif %}>Pending</option>
+      <option value="completed" {% if status_filter == 'completed' %}selected{% endif %}>Completed</option>
+      <option value="failed" {% if status_filter == 'failed' %}selected{% endif %}>Failed</option>
+    </select>
+  </form>
+
+  <!-- Task Table -->
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Type</th>
+        <th>Schedule</th>
+        <th>Profiles</th>
+        <th>Targets</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for task in tasks %}
+      <tr>
+        <td>{{ task.id }}</td>
+        <td>{{ task.task_type }}</td>
+        <td>{{ task.schedule_time }}</td>
+        <td>{{ task.profiles | join(', ') }}</td>
+        <td>{{ task.targets | join(', ') if task.targets else '-' }}</td>
+        <td>{{ task.status }}</td>
+        <td>
+          {% if task.status == 'failed' %}
+            <form method="post" action="{{ url_for('retry_task', task_id=task.id) }}" style="display:inline-block;">
+              <button class="btn btn-sm btn-warning">Retry</button>
+            </form>
+          {% endif %}
+
+          {% if task.status == 'pending' %}
+            <form method="post" action="{{ url_for('run_task_now', task_id=task.id) }}" style="display:inline;">
+                <button type="submit" class="btn btn-sm btn-primary">Run Now</button>
+            </form>
+          {% endif %}
+
+
+            <!-- <form action="{{ url_for('start_scheduler', task_id=task.id) }}" method="post" style="display: inline;">
+              <button type="submit" class="btn btn-success" {% if scheduler_running %}disabled{% endif %}>▶ Start</button>
+            </form>
+            <form action="{{ url_for('stop_scheduler', task_id=task.id) }}" method="post" style="display: inline;">
+              <button type="submit" class="btn btn-danger" {% if not scheduler_running %}disabled{% endif %}>⏹ Stop</button>
+            </form> -->
+          <a href="{{ url_for('edit_task', task_id=task.id) }}" class="btn btn-sm btn-info">Edit</a>
+
+          <form method="post" action="{{ url_for('delete_task', task_id=task.id) }}" style="display:inline-block;" onsubmit="return confirm('Are you sure you want to delete this task?');">
+            <button class="btn btn-sm btn-danger">Delete</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <a href="{{ url_for('create_task') }}" class="btn btn-primary">➕ Create New Task</a>
+</div>
+{% endblock %}

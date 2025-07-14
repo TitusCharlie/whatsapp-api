@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2>Edit Task</h2>
+
+  <form method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+      <label for="task_type" class="form-label">Task Type</label>
+      <select class="form-select" name="task_type" id="task_type" required>
+        <option value="message" {% if task.task_type == 'message' %}selected{% endif %}>Message</option>
+        <option value="media" {% if task.task_type == 'media' %}selected{% endif %}>Media</option>
+        <option value="status" {% if task.task_type == 'status' %}selected{% endif %}>Status</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="schedule_time" class="form-label">Schedule Time</label>
+      <input type="datetime-local" class="form-control" name="schedule_time" id="schedule_time"
+             value="{{ task.schedule_time|replace(' ', 'T') }}" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="targets" class="form-label">Targets (comma-separated)</label>
+      <input type="text" class="form-control" name="targets" id="targets"
+             value="{{ task.targets | join(',') }}">
+    </div>
+
+    <div class="mb-3">
+      <label for="message" class="form-label">Message</label>
+      <textarea class="form-control" name="message" id="message" rows="3">{{ task.message }}</textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="caption" class="form-label">Caption (for media/status)</label>
+      <input type="text" class="form-control" name="caption" id="caption" value="{{ task.caption }}">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Select Profiles</label>
+      {% for profile in profiles %}
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="profiles" value="{{ profile }}"
+                 id="profile_{{ profile }}" {% if profile in task.profiles %}checked{% endif %}>
+          <label class="form-check-label" for="profile_{{ profile }}">{{ profile }}</label>
+        </div>
+      {% endfor %}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a href="{{ url_for('view_tasks') }}" class="btn btn-secondary">Cancel</a>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,5 @@
+flask
+selenium
+schedule
+chromedriver-autoinstaller
+dateutil

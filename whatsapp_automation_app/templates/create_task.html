@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2>Create WhatsApp Task</h2>
+
+  <form method="POST" enctype="multipart/form-data" action="{{ url_for('create_task') }}">
+    <div class="mb-3">
+      <label for="task_type" class="form-label">Task Type</label>
+      <select class="form-select" id="task_type" name="task_type" required onchange="toggleFields()">
+        <option value="">-- Select --</option>
+        <option value="group_message">Group Message</option>
+        <option value="status">Status Update</option>
+      </select>
+    </div>
+
+    <div id="targets_group" class="mb-3" style="display: none;">
+      <label for="targets" class="form-label">Target Names (comma-separated)</label>
+      <input type="text" class="form-control" id="targets" name="targets" placeholder="e.g. Group A, Group B">
+      <small class="text-muted">Only required for Group Messages</small>
+    </div>
+
+    <div id="content_group" class="mb-3">
+      <label for="content" class="form-label">Text Content</label>
+      <textarea class="form-control" id="content" name="content" rows="3"></textarea>
+    </div>
+
+    <div id="media_group" class="mb-3" style="display: none;">
+      <label for="media" class="form-label">Media (Image/Video)</label>
+      <input type="file" class="form-control" id="media" name="media" accept="image/*,video/*">
+      <small class="text-muted">For Status Updates with media</small>
+    </div>
+
+    <div id="caption_group" class="mb-3" style="display: none;">
+      <label for="caption" class="form-label">Caption</label>
+      <input type="text" class="form-control" id="caption" name="caption" placeholder="Optional caption">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Select WhatsApp Profiles</label>
+      <div class="row">
+        {% for profile in profiles %}
+        <div class="col-md-4">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="profiles" value="{{ profile }}" id="profile_{{ loop.index }}">
+            <label class="form-check-label" for="profile_{{ loop.index }}">{{ profile }}</label>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="schedule_time" class="form-label">Schedule Time</label>
+      <input type="datetime-local" class="form-control" name="schedule_time" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create Task</button>
+  </form>
+</div>
+
+<script>
+function toggleFields() {
+  const type = document.getElementById('task_type').value;
+  const show = (id, show) => document.getElementById(id).style.display = show ? 'block' : 'none';
+
+  // Show/hide fields based on task type
+  show('targets_group', type === 'group_message');
+  show('media_group', type === 'status');
+  show('caption_group', type === 'status');
+  
+  // Adjust content label based on task type
+  const contentLabel = document.querySelector('label[for="content"]');
+  if (type === 'status') {
+    contentLabel.textContent = 'Status Text (if no media)';
+  } else {
+    contentLabel.textContent = 'Message Content';
+  }
+}
+
+// Initialize fields on page load
+document.addEventListener('DOMContentLoaded', toggleFields);
+</script>
+{% endblock %}

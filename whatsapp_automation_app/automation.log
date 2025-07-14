@@ -1,0 +1,77 @@
+2025-06-28 04:19:23,536 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-28 04:19:23,537 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-28 04:19:23,542 - werkzeug - INFO -  * Restarting with stat
+2025-06-28 04:19:24,245 - werkzeug - WARNING -  * Debugger is active!
+2025-06-28 04:19:24,250 - werkzeug - INFO -  * Debugger PIN: 829-260-409
+2025-06-28 04:19:39,471 - full_auto_scheduler - ERROR - Failed to load task task_1751080313172: Unrecognized datetime format: 2025-06-28T04:11:53.172651
+2025-06-28 04:19:39,483 - full_auto_scheduler - INFO - Loaded 0 tasks from storage
+2025-06-28 04:19:39,532 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2025 04:19:39] "GET /tasks HTTP/1.1" 200 -
+2025-06-28 04:19:40,849 - full_auto_scheduler - ERROR - Failed to load task task_1751080313172: Unrecognized datetime format: 2025-06-28T04:11:53.172651
+2025-06-28 04:19:40,850 - full_auto_scheduler - INFO - Loaded 0 tasks from storage
+2025-06-28 04:19:40,852 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2025 04:19:40] "GET /tasks HTTP/1.1" 200 -
+2025-06-28 04:19:45,258 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2025 04:19:45] "GET /create HTTP/1.1" 200 -
+2025-06-28 04:20:18,850 - full_auto_scheduler - ERROR - Failed to load task task_1751080313172: Unrecognized datetime format: 2025-06-28T04:11:53.172651
+2025-06-28 04:20:18,851 - full_auto_scheduler - INFO - Loaded 0 tasks from storage
+2025-06-28 04:20:18,854 - full_auto_scheduler - INFO - Saved 1 tasks to storage
+2025-06-28 04:20:18,857 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2025 04:20:18] "[32mPOST /create HTTP/1.1[0m" 302 -
+2025-06-28 04:20:18,910 - full_auto_scheduler - ERROR - Failed to load task task_1751080818848: Unrecognized datetime format: 2025-06-28T04:20:18.849060
+2025-06-28 04:20:18,911 - full_auto_scheduler - INFO - Loaded 0 tasks from storage
+2025-06-28 04:20:18,914 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2025 04:20:18] "GET /tasks HTTP/1.1" 200 -
+2025-06-28 04:20:20,768 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2025 04:20:20] "[32mPOST /start-scheduler HTTP/1.1[0m" 302 -
+2025-06-28 04:20:20,771 - full_auto_scheduler - ERROR - Failed to load task task_1751080818848: Unrecognized datetime format: 2025-06-28T04:20:18.849060
+2025-06-28 04:20:20,772 - full_auto_scheduler - INFO - Loaded 0 tasks from storage
+2025-06-28 04:20:20,778 - full_auto_scheduler - INFO - Saved 0 tasks to storage
+2025-06-28 04:20:20,784 - full_auto_scheduler - INFO - Loaded 0 tasks from storage
+2025-06-28 04:20:20,787 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2025 04:20:20] "GET /tasks HTTP/1.1" 200 -
+2025-06-28 04:20:25,814 - full_auto_scheduler - INFO - Loaded 0 tasks from storage
+2025-06-28 04:20:25,816 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2025 04:20:25] "GET /tasks HTTP/1.1" 200 -
+2025-06-28 04:20:27,370 - full_auto_scheduler - INFO - Loaded 0 tasks from storage
+2025-06-28 04:20:27,372 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2025 04:20:27] "GET /tasks HTTP/1.1" 200 -
+2025-06-28 04:21:20,781 - full_auto_scheduler - INFO - Loaded 0 tasks from storage
+2025-06-28 04:21:20,783 - full_auto_scheduler - INFO - Saved 0 tasks to storage
+2025-06-28 04:21:20,961 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2025 04:21:20] "[32mPOST /stop-scheduler HTTP/1.1[0m" 302 -
+2025-06-28 04:21:20,977 - full_auto_scheduler - INFO - Loaded 0 tasks from storage
+2025-06-28 04:21:20,980 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2025 04:21:20] "GET /tasks HTTP/1.1" 200 -
+2025-06-28 04:28:17,525 - werkzeug - INFO -  * Detected change in 'C:\\Users\\DELL 5550\\Downloads\\whatsapp_scheduler_status\\whatsapp_automation_app\\full_auto_scheduler.py', reloading
+2025-06-28 04:28:17,589 - werkzeug - INFO -  * Restarting with stat
+2025-06-28 04:28:18,371 - werkzeug - WARNING -  * Debugger is active!
+2025-06-28 04:28:18,374 - werkzeug - INFO -  * Debugger PIN: 829-260-409
+2025-06-28 04:28:28,354 - full_auto_scheduler - INFO - Loaded 0 tasks from storage
+2025-06-28 04:28:28,402 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2025 04:28:28] "GET /tasks HTTP/1.1" 200 -
+2025-06-28 04:28:30,014 - full_auto_scheduler - INFO - Loaded 0 tasks from storage
+2025-06-28 04:28:30,017 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2025 04:28:30] "GET /tasks HTTP/1.1" 200 -
+2025-06-28 04:28:30,515 - full_auto_scheduler - INFO - Loaded 0 tasks from storage
+2025-06-28 04:28:30,518 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2025 04:28:30] "GET /tasks HTTP/1.1" 200 -
+2025-06-28 04:28:32,297 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2025 04:28:32] "GET /create HTTP/1.1" 200 -
+2025-06-28 04:28:55,178 - full_auto_scheduler - INFO - Loaded 0 tasks from storage
+2025-06-28 04:28:55,181 - full_auto_scheduler - INFO - Saved 1 tasks to storage
+2025-06-28 04:28:55,184 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2025 04:28:55] "[32mPOST /create HTTP/1.1[0m" 302 -
+2025-06-28 04:28:55,232 - full_auto_scheduler - ERROR - Failed to load task task_1751081335162: Unrecognized datetime format: 2025-06-28T04:28:55.176983
+2025-06-28 04:28:55,233 - full_auto_scheduler - INFO - Loaded 0 tasks from storage
+2025-06-28 04:28:55,236 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2025 04:28:55] "GET /tasks HTTP/1.1" 200 -
+2025-06-28 04:28:59,807 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2025 04:28:59] "[32mPOST /start-scheduler HTTP/1.1[0m" 302 -
+2025-06-28 04:28:59,810 - full_auto_scheduler - ERROR - Failed to load task task_1751081335162: Unrecognized datetime format: 2025-06-28T04:28:55.176983
+2025-06-28 04:28:59,811 - full_auto_scheduler - INFO - Loaded 0 tasks from storage
+2025-06-28 04:28:59,819 - full_auto_scheduler - INFO - Saved 0 tasks to storage
+2025-06-28 04:28:59,825 - full_auto_scheduler - INFO - Loaded 0 tasks from storage
+2025-06-28 04:28:59,828 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2025 04:28:59] "GET /tasks HTTP/1.1" 200 -
+2025-06-28 04:29:02,216 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2025 04:29:02] "[32mPOST /stop-scheduler HTTP/1.1[0m" 302 -
+2025-06-28 04:29:02,234 - full_auto_scheduler - INFO - Loaded 0 tasks from storage
+2025-06-28 04:29:02,237 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2025 04:29:02] "GET /tasks HTTP/1.1" 200 -
+2025-06-28 04:29:03,732 - full_auto_scheduler - INFO - Loaded 0 tasks from storage
+2025-06-28 04:29:03,733 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2025 04:29:03] "GET /tasks HTTP/1.1" 200 -
+2025-06-28 04:29:55,156 - werkzeug - INFO -  * Detected change in 'C:\\Users\\DELL 5550\\Downloads\\whatsapp_scheduler_status\\whatsapp_automation_app\\full_auto_scheduler.py', reloading
+2025-06-28 04:29:55,218 - werkzeug - INFO -  * Restarting with stat
+2025-06-28 04:36:15,144 - werkzeug - INFO -  * Restarting with stat
+2025-06-28 04:38:14,170 - werkzeug - INFO -  * Restarting with stat
+2025-06-28 04:42:13,245 - werkzeug - INFO -  * Restarting with stat
+2025-06-28 04:48:18,866 - werkzeug - INFO -  * Restarting with stat
+2025-06-28 04:52:17,504 - werkzeug - INFO -  * Restarting with stat
+2025-06-28 10:24:52,421 - werkzeug - INFO -  * Restarting with stat
+2025-06-28 10:30:13,554 - werkzeug - INFO -  * Restarting with stat
+2025-06-28 10:37:18,427 - werkzeug - INFO -  * Restarting with stat
+2025-06-28 10:37:22,247 - werkzeug - INFO -  * Restarting with stat
+2025-06-28 10:39:38,852 - werkzeug - INFO -  * Restarting with stat
+2025-06-28 10:48:24,815 - werkzeug - INFO -  * Restarting with stat
+2025-06-28 10:53:55,056 - werkzeug - INFO -  * Restarting with stat

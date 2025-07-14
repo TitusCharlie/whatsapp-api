@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2 class="mb-4">Manage WhatsApp Profiles</h2>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for msg in messages %}
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+          {{ msg }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <!-- Create New Profile -->
+  <div class="card mb-4">
+    <div class="card-header bg-success text-white">
+      Create and Scan New Profile
+    </div>
+    <div class="card-body">
+      <form method="POST" action="{{ url_for('scan_qr') }}">
+        <div class="input-group">
+          <input type="text" class="form-control" name="new_profile" placeholder="Enter new profile name" required>
+          <button type="submit" class="btn btn-success">Scan WhatsApp</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Existing Profiles -->
+  <div class="card">
+    <div class="card-header">
+      Existing Profiles
+    </div>
+    <ul class="list-group list-group-flush">
+      {% if profiles %}
+        {% for profile in profiles %}
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ profile }}
+            <form method="POST" action="{{ url_for('scan_qr') }}">
+              <input type="hidden" name="new_profile" value="{{ profile }}">
+              <button class="btn btn-sm btn-outline-primary">Rescan</button>
+            </form>
+          </li>
+        {% endfor %}
+      {% else %}
+        <li class="list-group-item text-muted">No profiles created yet.</li>
+      {% endif %}
+    </ul>
+  </div>
+</div>
+{% endblock %}
